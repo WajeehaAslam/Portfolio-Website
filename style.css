@@ -970,7 +970,7 @@ header nav ul li a:hover {
 .navbar {
     display: none;
     flex-direction: column;
-    background-color: #00ffee; /* Adjust the color as needed */
+    background-color: #1e1e1e; /* Adjust the color as needed */
 }
 
 /* Show the navbar when the 'active' class is added */
@@ -999,7 +999,7 @@ header.head {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #000; /* Adjust the color as needed */
+    background-color: #1e1e1e; /* Adjust the color as needed */
     padding: 10px 20px;
 }
 
@@ -1018,18 +1018,6 @@ header.head {
 }
 
 
-/* Add this to your CSS to target the specific sections */
-.project-card h4,
-.project-card p,
-.experience-section h2,
-.experience-section p {
-    color: #00ffee;
-}
 
-/* If you want all text within these sections to be #00ffee */
-.project-card,
-.experience-section {
-    color: #00ffee;
-}
 
 
