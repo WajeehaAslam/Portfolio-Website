@@ -904,3 +904,23 @@ header nav ul li a:hover {
     padding: 2rem 3%;
   }
 }
+
+
+
+
+@media only screen and (max-width: 768px) {
+    .menu-items {
+        display: none;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .line-element { /* Replace .line-element with the actual class or ID */
+        display: none; /* This hides the element on mobile screens */
+    }
+}
+@media only screen and (max-width: 768px) {
+    .line-element::before, .line-element::after { /* Replace .line-element with the actual class or ID */
+        display: none;
+    }
+}
+
