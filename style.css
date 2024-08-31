@@ -945,31 +945,3 @@ header nav ul li a:hover {
         line-height: 1.5em; /* Adjust as needed */
     }
 }
-/* Ensures the navbar collapses on smaller screens */
-@media (max-width: 768px) {
-    .navbar {
-        display: none;
-    }
-
-    .navbar-toggler {
-        display: block;
-        position: absolute;
-        top: 20px;
-        left: 20px;
-    }
-
-    .navbar-collapse {
-        display: none;
-        flex-direction: column;
-        background-color: var(--bg-color);
-        position: absolute;
-        top: 50px;
-        width: 100%;
-        z-index: 1000;
-    }
-
-    .navbar-collapse.show {
-        display: flex;
-    }
-}
-
