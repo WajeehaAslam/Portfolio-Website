@@ -1017,3 +1017,21 @@ header.head {
     }
 }
 
+
+
+/* For project cards */
+.project-card h4 {
+    color: #00ffee;
+}
+
+.project-card p {
+    color: #00ffee;
+}
+
+/* For experience section */
+.experience-section h2,
+.experience-section p {
+    color: #00ffee;
+}
+
+
