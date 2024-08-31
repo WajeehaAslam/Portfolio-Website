@@ -956,7 +956,6 @@ header nav ul li a:hover {
 
 
 
-
 /* Hide the navbar by default for small screens */
 .navbar {
     display: none;
@@ -980,7 +979,7 @@ header nav ul li a:hover {
 
 /* Style the navbar items */
 .navbar a {
-    color: white; /* Set navbar links to white */
+    color: white;
     text-decoration: none;
     padding: 10px;
     display: block;
@@ -997,7 +996,7 @@ header.head {
 
 #menu-icon {
     font-size: 30px;
-    color: white; /* Ensure the menu icon is white */
+    color: white;
     cursor: pointer;
     display: block;
 }
@@ -1007,11 +1006,6 @@ header.head {
     #menu-icon {
         display: none;
     }
-}
-
-/* Ensure that other text on the page is not affected */
-body, p, h1, h2, h3, h4, h5, h6, span, div {
-    color: initial; /* Use the default color for all text elements */
 }
 
 
