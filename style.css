@@ -808,91 +808,42 @@ header nav ul li a:hover {
     font-size: 2.4rem;
   }
 
-  /* Navbar styling for mobile */
-  .navbar {
-    display: none; /* Hide navbar initially in mobile view */
-    flex-direction: column;
-    align-items: flex-start;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 2rem 3%;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 100%;
-    border-radius: 0;
-    border: none;
-    z-index: 1000; /* Ensure the navbar appears on top of other elements */
-  }
-
-  .navbar.active {
-    display: flex; /* Show the navbar when active */
-  }
-
-  .navbar a {
-    font-size: 2rem;
-    margin: 1.5rem 0;
-    text-align: left;
-  }
-
-  /* Hamburger menu styling */
-  .hamburger {
-    display: block; /* Show hamburger icon in mobile view */
-    font-size: 3rem;
-    cursor: pointer;
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    z-index: 1001; /* Ensure hamburger icon is above the navbar */
-  }
-
   .home {
     flex-direction: column;
-    text-align: left;
-    margin: 0;
-    padding: 0;
-    align-items: flex-start;
+    text-align: center;
+    margin: 5rem 2rem;
   }
 
   .home-content {
-    align-items: flex-start;
-    padding: 0;
+    align-items: center;
   }
 
   .home-content h1 {
     font-size: 5rem;
-    margin-top: 0;
   }
 
   .home-content h3 {
     font-size: 2.4rem;
-    margin-top: 0;
   }
 
   .home-content p {
     font-size: 1.4rem;
     max-width: 100%;
-    margin-top: 0;
   }
 
   .home-img img {
     width: 80vw;
   }
 
-  /* Keep timeline but remove left line */
   .timeline-items {
-    display: flex;
     flex-direction: column;
     padding: 0;
   }
 
-  .timeline-item {
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
     padding: 0;
     text-align: left;
-    position: relative;
-  }
-
-  .timeline-item::before {
-    display: none; /* Hide the left line (pseudo-element) */
   }
 
   .timeline-dot {
@@ -934,3 +885,4 @@ header nav ul li a:hover {
     padding: 2rem 3%;
   }
 }
+
