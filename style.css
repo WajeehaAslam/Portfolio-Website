@@ -970,7 +970,7 @@ header nav ul li a:hover {
 .navbar {
     display: none;
     flex-direction: column;
-    background-color: #000; /* Adjust the color as needed */
+    background-color: #00ffee; /* Adjust the color as needed */
 }
 
 /* Show the navbar when the 'active' class is added */
