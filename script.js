@@ -46,3 +46,13 @@ document.querySelectorAll('.project-card').forEach(card => {
   });
 });
 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navbar = document.querySelector('.navbar');
+
+    hamburger.addEventListener('click', function() {
+      navbar.classList.toggle('active'); // Toggle the navbar's visibility
+    });
+  });
+</script>
