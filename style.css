@@ -537,7 +537,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width:895px) {
   header {
       padding: 2rem 3%;
   }
@@ -576,7 +576,7 @@
   padding: 2rem 3%;
 }
 }
-@media (max-width: 895px) {
+@media (max-width: 768px) {
   #menu-icon {
       display: block;
   }
