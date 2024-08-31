@@ -43,7 +43,4 @@ document.querySelectorAll('.project-card').forEach(card => {
       this.style.borderColor = '#00ffee';
   });
 });
-function toggleNavbar() {
-    const navbar = document.querySelector('.navbar-collapse');
-    navbar.classList.toggle('show');
-}
+
