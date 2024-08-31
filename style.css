@@ -790,3 +790,112 @@ header nav ul li a:hover {
   font-size: 2.2em;
   line-height: 1.6;
 }
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+  
+  .header {
+    padding: 2rem 3%;
+  }
+  
+  .logo {
+    font-size: 2.4rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2rem 3%;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    border-radius: 0;
+    border: none;
+  }
+
+  .navbar a {
+    font-size: 2rem;
+    margin: 1.5rem 0;
+    text-align: left;
+  }
+
+  .home {
+    flex-direction: column;
+    text-align: center;
+    margin: 5rem 2rem;
+  }
+
+  .home-content {
+    align-items: center;
+  }
+
+  .home-content h1 {
+    font-size: 5rem;
+  }
+
+  .home-content h3 {
+    font-size: 2.4rem;
+  }
+
+  .home-content p {
+    font-size: 1.4rem;
+    max-width: 100%;
+  }
+
+  .home-img img {
+    width: 80vw;
+  }
+
+  .timeline-items {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    padding: 0;
+    text-align: left;
+  }
+
+  .timeline-dot {
+    left: 0;
+    transform: translateX(0);
+  }
+
+  .timeline-content {
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+
+  .services-container,
+  .testimonials-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-section h2,
+  .experience-section h2 {
+    font-size: 4rem;
+  }
+
+  .project-card {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .experience-box {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .contact form {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer {
+    padding: 2rem 3%;
+  }
+}
