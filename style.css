@@ -537,7 +537,7 @@
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 768px) {
   header {
       padding: 2rem 3%;
   }
@@ -796,7 +796,7 @@ header nav ul li a:hover {
   line-height: 1.6;
 }
 /* Media Queries */
-@media (max-width: 768px) {
+@media (max-width: 991px) {
     .navbar {
         display: none;
     }
