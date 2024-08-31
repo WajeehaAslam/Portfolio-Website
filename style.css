@@ -957,20 +957,11 @@ header nav ul li a:hover {
 
 
 
-
-
-
-
-
-
-
-
-
 /* Hide the navbar by default for small screens */
 .navbar {
     display: none;
     flex-direction: column;
-    background-color: #1e1e1e; /* Adjust the color as needed */
+    background-color: #1e1e1e; /* Background color for small screens */
 }
 
 /* Show the navbar when the 'active' class is added */
@@ -983,6 +974,7 @@ header nav ul li a:hover {
     .navbar {
         display: flex;
         flex-direction: row;
+        background-color: #000000; /* Ensure the navbar is black on larger screens */
     }
 }
 
@@ -999,7 +991,7 @@ header.head {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #1e1e1e; /* Adjust the color as needed */
+    background-color: #1e1e1e; /* Background color for the header */
     padding: 10px 20px;
 }
 
@@ -1016,8 +1008,5 @@ header.head {
         display: none;
     }
 }
-
-
-
 
 
