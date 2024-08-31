@@ -923,3 +923,25 @@ header nav ul li a:hover {
     padding: 2rem 3%;
   }
 }
+@media only screen and (max-width: 768px) {
+    /* Adjust line height for mobile */
+    .intro-text, .intro-container {
+        line-height: 1.5; /* Adjust as necessary */
+    }
+
+    /* Adjust padding */
+    .intro-text {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    /* Ensure the vertical alignment of text */
+    .intro-text {
+        vertical-align: middle;
+    }
+
+    /* If you're using a specific input or text area, ensure proper line height */
+    input, textarea {
+        line-height: 1.5em; /* Adjust as needed */
+    }
+}
