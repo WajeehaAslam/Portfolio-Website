@@ -829,50 +829,52 @@ header nav ul li a:hover {
 
   .home {
     flex-direction: column;
-    text-align: center;
-    margin: 5rem 2rem;
+    text-align: left; /* Align text to the left */
+    margin: 0; /* Remove margins to align content to the top left corner */
+    padding: 0; /* Remove padding */
+    align-items: flex-start; /* Align items to the start (left) */
   }
 
   .home-content {
-    align-items: center;
+    align-items: flex-start; /* Align content to the start (left) */
+    padding: 0; /* Remove padding */
   }
 
   .home-content h1 {
     font-size: 5rem;
+    margin-top: 0; /* Remove top margin to align to top */
   }
 
   .home-content h3 {
     font-size: 2.4rem;
+    margin-top: 0; /* Remove top margin to align to top */
   }
 
   .home-content p {
     font-size: 1.4rem;
     max-width: 100%;
+    margin-top: 0; /* Remove top margin to align to top */
   }
 
   .home-img img {
     width: 80vw;
   }
 
+  /* Remove timeline from mobile view */
   .timeline-items {
-    flex-direction: column;
-    padding: 0;
+    display: none; /* Hide the timeline items on mobile */
   }
-
-  .timeline-item:nth-child(odd),
-  .timeline-item:nth-child(even) {
-    padding: 0;
-    text-align: left;
+  
+  .timeline-item {
+    display: none; /* Hide individual timeline items on mobile */
   }
 
   .timeline-dot {
-    left: 0;
-    transform: translateX(0);
+    display: none; /* Hide timeline dots on mobile */
   }
 
   .timeline-content {
-    padding: 2rem;
-    margin: 2rem 0;
+    display: none; /* Hide timeline content on mobile */
   }
 
   .services-container,
@@ -907,20 +909,4 @@ header nav ul li a:hover {
 
 
 
-
-@media only screen and (max-width: 768px) {
-    .menu-items {
-        display: none;
-    }
-}
-@media only screen and (max-width: 768px) {
-    .line-element { /* Replace .line-element with the actual class or ID */
-        display: none; /* This hides the element on mobile screens */
-    }
-}
-@media only screen and (max-width: 768px) {
-    .line-element::before, .line-element::after { /* Replace .line-element with the actual class or ID */
-        display: none;
-    }
-}
 
