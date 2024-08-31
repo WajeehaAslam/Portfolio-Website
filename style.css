@@ -1018,19 +1018,17 @@ header.head {
 }
 
 
-
-/* For project cards */
-.project-card h4 {
-    color: #00ffee;
-}
-
-.project-card p {
-    color: #00ffee;
-}
-
-/* For experience section */
+/* Add this to your CSS to target the specific sections */
+.project-card h4,
+.project-card p,
 .experience-section h2,
 .experience-section p {
+    color: #00ffee;
+}
+
+/* If you want all text within these sections to be #00ffee */
+.project-card,
+.experience-section {
     color: #00ffee;
 }
 
