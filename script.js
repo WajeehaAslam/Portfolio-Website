@@ -3,8 +3,6 @@ let navbar = document.querySelector('.navbar');
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
 
-
-
 window.onscroll = () => {
   sections.forEach(sec => {
     let top = window.scrollY;
@@ -15,27 +13,34 @@ window.onscroll = () => {
     if (top >= offset && top < offset + height) {
       navLinks.forEach(links => {
         links.classList.remove('active');
-        document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+        const activeLink = document.querySelector('header nav a[href*=' + id + ']');
+        if (activeLink) {
+          activeLink.classList.add('active');
+        }
       });
     }
   });
 };
 
-menuIcon.onclick = () => {
-  menuIcon.classList.toggle('bx-x');
-  navbar.classList.toggle('active');
-};
-
-
-
+if (menuIcon) {
+  menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
+  };
+}
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (!target) return;
       e.preventDefault();
-
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-      });
+      target.scrollIntoView({ behavior: 'smooth' });
+      if (navbar) {
+        navbar.classList.remove('active');
+      }
+      if (menuIcon) {
+        menuIcon.classList.remove('bx-x');
+      }
   });
 });
 
@@ -45,14 +50,3 @@ document.querySelectorAll('.project-card').forEach(card => {
       this.style.borderColor = '#00ffee';
   });
 });
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('.hamburger');
-    const navbar = document.querySelector('.navbar');
-
-    hamburger.addEventListener('click', function() {
-      navbar.classList.toggle('active'); // Toggle the navbar's visibility
-    });
-  });
-</script>
