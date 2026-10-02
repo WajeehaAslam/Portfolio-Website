@@ -1062,7 +1062,7 @@ header nav ul li a:hover {
     }
 
     .home {
-        flex-direction: column;
+        flex-direction: column-reverse;
         text-align: center;
         gap: 3rem;
         min-height: auto;
