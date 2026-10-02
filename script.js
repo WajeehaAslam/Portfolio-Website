@@ -55,6 +55,20 @@ const contactForm = document.getElementById('contact-form');
 const formStatus = document.getElementById('form-status');
 const formSuccess = document.getElementById('form-success');
 const sendAnother = document.getElementById('send-another');
+const WHATSAPP_NUMBER = '923134601985';
+
+function openWhatsAppMessage({ name, email, phone, subject, message }) {
+  const text =
+    `New message from Portfolio Website` +
+    `\n\nName: ${name || '-'}` +
+    `\nEmail: ${email || '-'}` +
+    `\nPhone: ${phone || '-'}` +
+    `\nSubject: ${subject || '-'}` +
+    `\n\nMessage:\n${message || '-'}`;
+
+  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+  window.open(url, '_blank');
+}
 
 if (contactForm) {
   contactForm.addEventListener('submit', async function (e) {
@@ -66,15 +80,25 @@ if (contactForm) {
     formStatus.textContent = '';
     formStatus.className = 'form-status';
 
+    const formData = new FormData(contactForm);
+    const payload = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      subject: formData.get('subject'),
+      message: formData.get('message')
+    };
+
     try {
       const response = await fetch(contactForm.action, {
         method: 'POST',
-        body: new FormData(contactForm),
+        body: formData,
         headers: { Accept: 'application/json' }
       });
       const result = await response.json();
 
       if (response.ok && result.success !== 'false') {
+        openWhatsAppMessage(payload);
         contactForm.reset();
         contactForm.hidden = true;
         formSuccess.hidden = false;
