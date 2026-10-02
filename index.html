@@ -29,7 +29,7 @@
 
     <section class="home" id="home">
         <div class="home-content">
-        <h1>Hi, It's <span>Wajeeha</span></h1>
+        <h1>Hi, It's&nbsp;<span>Wajeeha&nbsp;Aslam</span></h1>
         <h3 class="text-animation"><span></span></h3>
         <p>AI Engineer with 1+ year of experience building production-grade LLM applications, Retrieval-Augmented Generation (RAG) systems, and knowledge-graph-powered legal AI. Skilled at bridging complex, unstructured data and intelligent insight through ontology-based GraphRAG, agentic workflows, Text-to-SQL pipelines, and LLM-based automation.</p>
 
@@ -248,7 +248,10 @@
             <a href="tel:+923134601985"><i class='bx bx-phone'></i> +92 313 4601985</a>
             <span><i class='bx bx-map'></i> Lahore, Pakistan</span>
         </div>
-        <form action="mailto:wajeehaaslam597@gmail.com" method="post" enctype="text/plain">
+        <form id="contact-form" action="https://formsubmit.co/ajax/f93dccc8e0d5a6a71e2f2abf65308f07" method="POST">
+            <input type="hidden" name="_subject" value="New message from Portfolio Website">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
             <div class="input-group">
                 <div class="input-box">
                     <input type="text" name="name" placeholder="Full Name" required>
@@ -266,6 +269,13 @@
                 <input type="submit" value="Send Message" class="btn">
             </div>
         </form>
+        <div id="form-success" class="form-success" hidden>
+            <i class='bx bx-check-circle'></i>
+            <h3>Message Sent</h3>
+            <p>Thanks for reaching out! I’ll get back to you soon at the email you shared.</p>
+            <button type="button" id="send-another" class="btn">Send Another Message</button>
+        </div>
+        <p id="form-status" class="form-status"></p>
     </section>
 
     <footer class="footer">

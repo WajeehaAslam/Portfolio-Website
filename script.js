@@ -50,3 +50,54 @@ document.querySelectorAll('.project-card').forEach(card => {
       this.style.borderColor = '#00ffee';
   });
 });
+
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+const formSuccess = document.getElementById('form-success');
+const sendAnother = document.getElementById('send-another');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const submitBtn = contactForm.querySelector('input[type="submit"]');
+    const originalValue = submitBtn.value;
+    submitBtn.value = 'Sending...';
+    submitBtn.disabled = true;
+    formStatus.textContent = '';
+    formStatus.className = 'form-status';
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { Accept: 'application/json' }
+      });
+      const result = await response.json();
+
+      if (response.ok && result.success !== 'false') {
+        contactForm.reset();
+        contactForm.hidden = true;
+        formSuccess.hidden = false;
+        formStatus.textContent = '';
+      } else {
+        formStatus.textContent = result.message || 'Something went wrong. Please try again or email wajeehaaslam597@gmail.com directly.';
+        formStatus.classList.add('error');
+      }
+    } catch (error) {
+      formStatus.textContent = 'Could not send right now. Please email wajeehaaslam597@gmail.com directly.';
+      formStatus.classList.add('error');
+    } finally {
+      submitBtn.value = originalValue;
+      submitBtn.disabled = false;
+    }
+  });
+}
+
+if (sendAnother && contactForm && formSuccess) {
+  sendAnother.addEventListener('click', function () {
+    formSuccess.hidden = true;
+    contactForm.hidden = false;
+    formStatus.textContent = '';
+    formStatus.className = 'form-status';
+  });
+}
