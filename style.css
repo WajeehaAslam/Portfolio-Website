@@ -162,6 +162,41 @@
     line-height: 1.8;
     max-width: 1000px;
   }
+
+  .hero-role {
+    margin-top: 0.5rem;
+  }
+
+  .hero-proof {
+    list-style: none;
+    margin: 1.6rem 0 0;
+    padding: 0;
+    max-width: 720px;
+  }
+
+  .hero-proof li {
+    position: relative;
+    padding-left: 1.6rem;
+    margin-bottom: 1rem;
+    font-size: 1.45rem;
+    line-height: 1.55;
+    color: #d8d8d8;
+  }
+
+  .hero-proof li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.65rem;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background: var(--main-color);
+  }
+
+  .hero-proof strong {
+    color: white;
+  }
   
   .social-icons a {
     display: inline-flex;
@@ -207,17 +242,20 @@
   .btn-group {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 1.5rem;
   }
   
-  .btn-group a:nth-of-type(2) {
+  .btn-group a:nth-of-type(2),
+  .btn-group a:nth-of-type(3) {
     background-color: black;
     color: var(--main-color);
     border: 2px solid var(--main-color);
     box-shadow: 0 0 25px transparent;
   }
   
-  .btn-group a:nth-of-type(2):hover {
+  .btn-group a:nth-of-type(2):hover,
+  .btn-group a:nth-of-type(3):hover {
     box-shadow: 0 0 25px var(--main-color);
     background-color: var(--main-color);
     color: black;
@@ -795,6 +833,56 @@ header nav ul li a:hover {
   color: var(--text-color);
 }
 
+.impact-strip {
+  min-height: auto;
+  padding: 6rem 12% 5rem;
+  background: var(--second-bg-color);
+  text-align: center;
+}
+
+.impact-heading {
+  font-size: 4rem;
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.8rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.impact-chip {
+  background: var(--bg-color);
+  border: 2px solid var(--main-color);
+  border-radius: 1.4rem;
+  padding: 2.2rem 1.4rem;
+  transition: 0.25s ease;
+}
+
+.impact-chip:hover {
+  box-shadow: 0 0 18px rgba(0, 255, 238, 0.25);
+  transform: translateY(-3px);
+}
+
+.impact-value {
+  display: block;
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--main-color);
+  margin-bottom: 0.8rem;
+  line-height: 1.2;
+}
+
+.impact-label {
+  display: block;
+  font-size: 1.35rem;
+  color: #cfcfcf;
+  line-height: 1.4;
+}
+
 .projects-section {
   padding: 80px 20px 40px;
   text-align: center;
@@ -805,8 +893,16 @@ header nav ul li a:hover {
   font-size: 7rem;
   font-weight: 700;
   margin-top: 1.5rem;
-  margin-bottom: 4rem;
+  margin-bottom: 1.5rem;
   line-height: 1;
+}
+
+.projects-intro {
+  font-size: 1.7rem;
+  color: #c8c8c8;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+  line-height: 1.5;
 }
 
 .projects-container {
@@ -827,6 +923,13 @@ header nav ul li a:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s, border-color 0.3s, box-shadow 0.3s;
   border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card.case-study {
+  width: min(100%, 370px);
+  min-height: 100%;
 }
 
 .project-badge {
@@ -838,25 +941,52 @@ header nav ul li a:hover {
   padding: 0.4rem 1rem;
   margin-bottom: 1.2rem;
   letter-spacing: 0.03em;
+  align-self: flex-start;
 }
 
 .project-card h4 {
   font-size: 2.4rem;
-  margin: 0 0 1rem;
+  margin: 0 0 1.4rem;
   color: white;
 }
 
-.project-card p {
-  font-size: 1.5rem;
-  line-height: 1.6;
-  margin: 0 0 1.5rem;
+.case-meta {
+  margin: 0 0 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  flex: 1;
+}
+
+.case-meta div {
+  margin: 0;
+}
+
+.case-meta dt {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--main-color);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.35rem;
+}
+
+.case-meta dd {
+  margin: 0;
+  font-size: 1.4rem;
+  line-height: 1.55;
   color: #d8d8d8;
+}
+
+.case-meta strong {
+  color: white;
 }
 
 .project-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
+  margin-top: auto;
 }
 
 .project-tags span {
@@ -867,8 +997,22 @@ header nav ul li a:hover {
   padding: 0.35rem 0.9rem;
 }
 
+.project-link {
+  display: inline-block;
+  margin-top: 1.4rem;
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--main-color);
+  border-bottom: 1px solid transparent;
+  transition: 0.2s ease;
+}
+
+.project-link:hover {
+  border-bottom-color: var(--main-color);
+}
+
 .project-card:hover {
-  transform: scale(1.03);
+  transform: translateY(-4px);
   border-color: #00ffee;
   box-shadow: 0 0 25px rgba(0, 255, 238, 0.25);
 }
@@ -1147,9 +1291,40 @@ header nav ul li a:hover {
     .experience-section,
     .projects-section,
     .education,
-    .contact {
+    .contact,
+    .impact-strip {
         padding-left: 4%;
         padding-right: 4%;
+    }
+
+    .impact-strip {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    .impact-heading {
+        font-size: 3.2rem;
+    }
+
+    .impact-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+    }
+
+    .hero-proof {
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .projects-intro {
+        font-size: 1.5rem;
+        margin-bottom: 3rem;
+        padding: 0 1rem;
+    }
+
+    .project-card.case-study {
+        width: 100%;
     }
 
     .skills-grid {
@@ -1257,6 +1432,14 @@ header nav ul li a:hover {
     .experience-section h2 {
         font-size: 3.4rem;
         margin: 2rem 0 3rem;
+    }
+
+    .impact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .impact-value {
+        font-size: 2.2rem;
     }
 
     .btn-group {

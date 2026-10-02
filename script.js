@@ -30,24 +30,24 @@ if (menuIcon) {
 }
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-      const target = document.querySelector(this.getAttribute('href'));
-      if (!target) return;
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth' });
-      if (navbar) {
-        navbar.classList.remove('active');
-      }
-      if (menuIcon) {
-        menuIcon.classList.remove('bx-x');
-      }
+  anchor.addEventListener('click', function (e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth' });
+    if (navbar) {
+      navbar.classList.remove('active');
+    }
+    if (menuIcon) {
+      menuIcon.classList.remove('bx-x');
+    }
   });
 });
 
 document.querySelectorAll('.project-card').forEach(card => {
-  card.addEventListener('click', function() {
-      document.querySelectorAll('.project-card').forEach(c => c.style.borderColor = 'transparent');
-      this.style.borderColor = '#00ffee';
+  card.addEventListener('click', function () {
+    document.querySelectorAll('.project-card').forEach(c => c.style.borderColor = 'transparent');
+    this.style.borderColor = '#00ffee';
   });
 });
 
