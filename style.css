@@ -26,18 +26,19 @@
     color: var(--text-color);
   }
   
-  .header {
+  .header,
+  .head {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 4em 12%;
+    padding: 2rem 8%;
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 5;
+    z-index: 1000;
   }
   
   .logo {
@@ -602,6 +603,13 @@
 
 .contact form {
   flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+}
+
+.contact form textarea {
+  min-width: 0;
+  width: 100%;
 }
 
 .footer {
@@ -646,9 +654,10 @@
 }
 
 .home-content h1 {
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   margin-top: 2rem;
-  white-space: nowrap;
+  white-space: normal;
+  line-height: 1.3;
 }
 .home-content p {
   max-width: 600px;
@@ -656,10 +665,10 @@
 }
 
 .home-img img {
-  width: 150px;
-  height: 150px;
-  max-width: 150px;
-  border-radius: 2rem;
+  width: 130px;
+  height: 130px;
+  max-width: 130px;
+  border-radius: 1.6rem;
 }
 
 .services h2 {
@@ -1012,19 +1021,74 @@ header nav ul li a:hover {
 }
 /* Media Queries */
 @media (max-width: 991px) {
-    .navbar {
-        display: none;
+    .head,
+    .header {
+        padding: 1.6rem 5%;
     }
 
     #menu-icon {
         display: block;
         cursor: pointer;
-        font-size: 24px;
+        font-size: 3.2rem;
+        z-index: 1001;
+    }
+
+    .navbar {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: min(70%, 280px);
+        padding: 1.5rem 3%;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(20px);
+        border-bottom-left-radius: 2rem;
+        border-left: 2px solid var(--main-color);
+        border-bottom: 2px solid var(--main-color);
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 1.8rem;
+        margin: 1.6rem 0;
+        margin-left: 0;
+        color: white;
     }
 
     .home {
         flex-direction: column;
         text-align: center;
+        gap: 3rem;
+        min-height: auto;
+        padding-top: 12rem;
+    }
+
+    .home-content {
+        align-items: center;
+        width: 100%;
+    }
+
+    .home-content h1 {
+        font-size: 2.6rem;
+        white-space: normal;
+        line-height: 1.3;
+    }
+
+    .home-content p {
+        margin: 0 auto;
+        max-width: 100%;
+        font-size: 1.4rem;
+    }
+
+    .social-icons,
+    .btn-group {
+        justify-content: center;
     }
 
     .home-img img {
@@ -1034,31 +1098,179 @@ header nav ul li a:hover {
         border-radius: 1.8rem;
     }
 
+    .heading,
+    .projects-section h2,
+    .experience-section h2 {
+        font-size: 4.5rem;
+    }
+
+    .skills-section,
+    .experience-section,
+    .projects-section,
+    .education,
+    .contact {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
     .projects-container {
         flex-direction: column;
+        align-items: center;
     }
 
     .project-card {
-        flex: 1 1 100%;
+        width: 100%;
+        max-width: 100%;
     }
 
-    .input-group {
+    .experience-box {
+        padding: 2rem;
+    }
+
+    .contact-info {
         flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
     }
 
-    .input-box {
-        margin-bottom: 10px;
+    .contact form {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+        margin: 3rem auto;
+        width: 100%;
+        padding: 0;
+    }
+
+    .contact form .input-group,
+    .contact form .input-group-2 {
+        max-width: 100%;
+        width: 100%;
+        flex: 1 1 auto;
+    }
+
+    .contact form .input-box input,
+    .contact form textarea {
+        width: 100%;
+        min-width: 0;
+        padding: 1.6rem 1.8rem;
+        font-size: 1.5rem;
+        margin: 0.8rem 0;
+    }
+
+    .contact form textarea {
+        min-height: 180px;
+        min-width: 0;
+    }
+
+    .contact form .btn {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .form-success {
+        margin: 2rem 0 0;
+        padding: 2.5rem 1.8rem;
+        width: 100%;
+    }
+
+    .timeline-content {
+        padding: 2rem 2.2rem;
+    }
+
+    .footer ul li {
+        display: block;
+        padding: 0.6rem 0;
     }
 }
 
-@media (max-width: 480px) {
-    .logo {
-        font-size: 20px;
+@media (max-width: 600px) {
+    html {
+        font-size: 52%;
     }
 
-    .navbar a {
-        padding: 10px;
-        font-size: 14px;
+    .logo {
+        font-size: 2.2rem;
+    }
+
+    .home {
+        margin: 2rem 0;
+        gap: 2rem;
+        padding: 10rem 4% 4rem;
+    }
+
+    .home-content h1 {
+        font-size: 2.2rem;
+        white-space: normal;
+    }
+
+    .text-animation {
+        font-size: 2.2rem;
+        min-width: 0;
+    }
+
+    .heading,
+    .projects-section h2,
+    .experience-section h2 {
+        font-size: 3.4rem;
+        margin: 2rem 0 3rem;
+    }
+
+    .btn-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-group .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .social-icons a {
+        width: 4rem;
+        height: 4rem;
+        font-size: 2rem;
+        margin: 2rem 0.8rem 2rem 0;
+    }
+
+    .project-card {
+        padding: 1.8rem;
+    }
+
+    .project-card h4 {
+        font-size: 2rem;
+    }
+
+    .experience-header h3 {
+        font-size: 2rem;
+    }
+
+    .contact-info a,
+    .contact-info span {
+        font-size: 1.35rem;
+        word-break: break-word;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .contact form .input-box input,
+    .contact form textarea {
+        padding: 1.4rem 1.5rem;
+        border-radius: 1.4rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .home-content h1 {
+        font-size: 1.9rem;
+    }
+
+    .logo {
+        font-size: 1.8rem;
     }
 }
 
